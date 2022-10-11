@@ -1,20 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block header %}
+    {% include '_navbar_homepage.html.twig' %}
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+ 
+    <div class="row justify-content-center align-items-center block my-5">
+        <div class=" col-12 justify-content-center align-items-center">
+            <p class="h2 pt-3 text-center">
+              Tableau des listes de taches
+            </p>
+        </div>
+    
+    <div class="row justify-content-center align-items-center block my-5">
+        <div class=" col-12 justify-content-center align-items-center">
+            <p>
+                <button class="button" role="button">
+                    <a class="" href="">
+                      <i class="fas fa-plus"></i>
+                        Créer une liste
+                    </a>
+                </button>
+            </p>
+        </div>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="row justify-content-center align-items-center block my-5">
+        <table class="table table-hover">
+            <thead class="">
+                <tr class="" >
+                    <th scope="col">Titre</th>
+                    <th scope="col">Echéance</th>
+                    <th scope="col">Priorité</th>
+                    <th scope="col">Progression</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/apps/gestionnaire_listes/src/Controller/HomePageController.php'|file_link(0) }}">src/Controller/HomePageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/apps/gestionnaire_listes/templates/home_page/index.html.twig'|file_link(0) }}">templates/home_page/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+
+
 {% endblock %}
+       

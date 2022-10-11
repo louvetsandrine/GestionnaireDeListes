@@ -1,0 +1,108 @@
+* {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    line-height: 1.3;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.block_header_homepage {
+    background: radial-gradient(circle, rgba(226,167,200,0.9345939059217437) 0%, rgba(252,70,107,1) 100%);
+    background-size: cover;
+    /* padding-top: 3vw; */
+    height: 30vw;
+}
+
+.block_header {
+    background: radial-gradient(circle, rgba(226,167,200,0.9345939059217437) 0%, rgba(252,70,107,1) 100%);
+    background-size: cover;
+    /* padding-top: 3vw; */
+    height: 15vw;
+}
+
+.titel {
+    font-family: 'Katibeh', cursive;
+    font-size: 8vw;
+    font-weight: 800;
+    color:#fff;
+    padding-top: 1.5vw;
+    text-shadow:   
+     -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000,
+     1px 1px 2px #B50B27,
+     1px 1px 3px #B50B27,
+     1px 1px 5px #141414,
+     1px 1px 7px #141414,
+     1px 1px 10px #141414,
+     1px 1px 12px #141414,
+     1px 1px 18px #141414;
+}
+
+.subtitle {
+    font-family: 'Katibeh', cursive;
+    font-size: 4vw;
+    font-weight: 800;
+    margin-bottom: 20vw;
+    color:#fff;
+    text-shadow:   
+     -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+     1px 1px 0 #000,
+     1px 1px 2px #B50B27,
+     1px 1px 3px #B50B27,
+     1px 1px 5px #141414,
+     1px 1px 7px #141414,
+     1px 1px 10px #141414,
+     1px 1px 12px #141414,
+     1px 1px 18px #141414;
+}
+
+.h2 {
+    font-family: 'Katibeh', cursive;  
+    font-weight: 800;
+    font-size: 4vw;
+    text-align: left;
+}
+
+#menu.background {
+    background-color: black;
+}
+
+#menu.scrolled {
+    background-color: black!important;
+    transition: background-color 100ms linear;
+    height: 100px;
+}
+
+.button_menu {
+    color: white;
+    font-weight: 800;
+    margin-left: 2vw;
+    margin-top: 2vw; 
+}
+
+a.link_menu, a.link_menu:visited {
+    color:#fff;
+    font-size: 16px;
+    margin-left: 2vw;
+    text-shadow: 2px 2px 8px #000;
+}
+
+a.link_menu:hover {
+    font-weight: 800;
+    color: #fff;
+}
+
+.image {
+    width: 17vw;
+    border-radius: 50%;
+}
