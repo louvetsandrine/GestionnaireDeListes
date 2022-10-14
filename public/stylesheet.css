@@ -106,3 +106,279 @@ a.link_menu:hover {
     width: 17vw;
     border-radius: 50%;
 }
+
+tr {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td, th {
+    font-size: 1.25vw;
+    height: 5vw;
+}
+
+i {
+    color: rgba(252,70,107,1);
+    font-size: 1.5vw;
+    padding-right: 1.5vw;
+}
+
+.button:hover i {
+    color: white;
+}
+
+.button {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(252,70,107,1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  background-color: rgba(252,70,107,1);
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+
+
+a {
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    font-size: 1.25vw;
+}
+
+.button:hover a {
+    color: white;
+}
+
+.block {
+    
+}
+
+
+/* Table */
+
+table thead tr th {
+    font-size: 1.5vw;
+}
+
+.urgent {
+    color: red;
+}
+
+.badge {
+    top: 1.5vw; 
+    
+    font-size: 0.65vw; 
+    
+    
+}
+
+
+
+
+
+/* Form */
+
+.radio label {
+    margin-left: 0.5vw;
+    margin-right: 2vw;
+}
+
+label {
+    font-size: 1.15vw;
+}
+
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: grey;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+.form-control:-moz-placeholder { /* Firefox 19+ */
+    color: gray;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+.form-control::-ms-input-placeholder { /* IE 10+ */
+    color: gray;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+.form-control::-moz-placeholder { /* Firefox 18- */
+    color: gray;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+
+
+/* Footer */
+.footer {
+    height: 5vw;
+    background-color: black;
+    color: white;
+}
+
+tr {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td, th {
+    font-size: 1.25vw;
+    height: 5vw;
+}
+
+i {
+    color: rgba(252,70,107,1);
+    font-size: 1.5vw;
+    padding-right: 1.5vw;
+}
+
+.button:hover i {
+    color: white;
+}
+
+.button {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all .1s cubic-bezier(.4, 0, .2, 1);
+  box-shadow: 0px 1px 2px rgba(252,70,107,1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  background-color: rgba(252,70,107,1);
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+
+
+a {
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    font-size: 1.25vw;
+}
+
+.button:hover a {
+    color: white;
+}
+
+.block {
+    
+}
+
+
+/* Table */
+
+table thead tr th {
+    font-size: 1.5vw;
+}
+
+.urgent {
+    color: red;
+}
+
+.badge {
+    top: 1.5vw; 
+    
+    font-size: 0.65vw; 
+    
+    
+}
+
+
+
+
+
+/* Form */
+
+.radio label {
+    margin-left: 0.5vw;
+    margin-right: 2vw;
+}
+
+label {
+    font-size: 1.15vw;
+}
+
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: grey;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+.form-control:-moz-placeholder { /* Firefox 19+ */
+    color: gray;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+.form-control::-ms-input-placeholder { /* IE 10+ */
+    color: gray;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+.form-control::-moz-placeholder { /* Firefox 18- */
+    color: gray;
+    font-style: italic;
+    font-size: 1.15vw;
+}
+
+
+
+/* Footer */
+.footer {
+    height: 5vw;
+    background-color: black;
+    color: white;
+}
+
+
