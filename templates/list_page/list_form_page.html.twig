@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block header %}
-    {% include '_navbar_homepage.html.twig' %}
+    {% include '_navbar.html.twig' %}
 {% endblock %}
 
 {% block body %}
@@ -9,25 +9,78 @@
     <div class="row justify-content-center align-items-center block my-5">
         <div class=" col-12 justify-content-center align-items-center">
             <p class="h2 pt-3 text-center">
-              Créer une liste
+             
             </p>
         </div>
     </div>
-
 
     <form class="justify-content-center align-items-center">
 
         <div class="row mt-5 mb-5 justify-content-center align-items-center">
             <div class="col-md-2">
+            {{ form_label(form.name,"Nom de la liste:",{ 
+                'label_attr': {'class': 'text_label'}
             
+                }) }}
             </div>
             <div class="col-md-5">
-            
+            {{ form_widget(form.name, {
+                "required": true, 
+                "attr": {
+                    "class": "form-control",
+                    "placeholder": "Nom de la liste",
+                }
+                }) }}
             </div>
         </div>
-    </form>
+    
+    <div class="row mt-5 mb-5 justify-content-center align-items-center">
+        <div class="col-md-2">
+          {{ form_label(form.dateLimited, "Echéance:",{ 
+                'label_attr': {'class': 'text_label'}
+            
+                }) }}
+        </div>
+        <div class="col-md-5">
+          {{ form_widget(form.dateLimited, {
+              "required": true,
+              "attr": {
+                "class": "form-control",
+                "placeholder": "jj/mm/aaaa"
+              }
+          }) }}
+        </div>
+    </div>
+    
+    <div class="row mt-5 mb-5 justify-content-center align-items-center">
+        <div class="col-md-2">
+          {{ form_label(form.priority,"Priorité:",{ 
+                'label_attr': {'class': 'text_label'}
+            
+                }) }}
+        </div>
+        <div class="col-md-5">
+            <div class="form-check ">
+              {{ form_widget(form.priority, {
+                  "attr": {
+                    "class": "radio",
+                  }  
+                }) }}
+            </div>
+        </div>
+    </div>
 
     
+
+     <div class="row mt-5 mb-5 justify-content-center align-items-center">
+        <div class="col-sm-2 offset-md-1">
+            <button type="submit" class="btn button">Enregistrer</button>
+        </div>
+    </div>
+
+</form>
+
+{{ form_end(form) }}
 
 
 
