@@ -16,7 +16,7 @@ class ListDetailsPageController extends AbstractController
     {        
         $listDetails = $listsRepository->find($id);
           
-        return $this->render('listsPage/list_details_page.html.twig', [
+        return $this->render('list_page/list_details_page.html.twig', [
             'title' => 'Gestionnaire de listes',
             'subtitle' => 'Gérer vos listes et vos tâches en toute simplicité!',
             'listDetails' => $listDetails

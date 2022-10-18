@@ -16,8 +16,8 @@ class ListCreateType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('author')
+            ->add('name',  TextType::class)
+            ->add('author',  TextType::class)
             ->add('priority', ChoiceType::class, [
                 'label' => 'Priorité: ',
                 'label_attr' => [
