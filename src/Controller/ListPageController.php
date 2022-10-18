@@ -24,12 +24,13 @@ class ListPageController extends AbstractController
 
         $list->setName('nouveau');
         $list->setPriority('forte');
+        $list->setAuthor('machin');
         $list->setDateLimited($date);
         
         $list->setNowDate($date);
         
         $form->handleRequest($request);
-       
+
         if($form->isSubmitted() ){
             // dd($form->getData());
           

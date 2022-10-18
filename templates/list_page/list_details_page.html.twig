@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include '_navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+        
+        <div class="row justify-content-center align-items-center block my-5">
+            <div class=" col-12 justify-content-center align-items-center">
+                <p class="h2 pt-3">
+                  Liste: {{listDetails.name}}
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center align-items-center block my-5">
+            <div class=" col-12 justify-content-center align-items-center">
+                <p class="">
+                  Auteur: 
+                </p>
+                <p class="">
+                  Echéance: {{listDetails.limiteDate | date('d/m/Y')}}
+                </p>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center align-items-center block my-5">
+            <table class="table table-hover">
+                <thead class="">
+                    <tr class="" >
+                        <th scope="col">Nom</th>
+                        <th scope="col">Echéance</th>
+                        <th scope="col">Personnes</th>
+                        <th scope="col">Etat</th>
+                        <th scope="col">Observations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {# {% for list in lists %}
+                    <tr>
+                        <th scope="row">
+                          {{ list.name | capitalize }}
+                        </th>
+                        <td >
+                          {{ list.limiteDate | date('d/m/Y') }}                     
+                        </td>
+                        <td class="{% if list.priority == "Urgent" %} urgent {% endif %} ">
+                          {{ list.limiteDate | ago(locale='fr') | capitalize}}
+                        </td>
+                        <td>18%</td>
+                        <td>
+                            <a class="" href="{{path('list_details_page')}}">
+                                <i class="fas fa-eye" title="Voir"></i>
+                            </a>
+                            <a class="" href="{{path('tasks_page')}}">
+                                <i class="fas fa-pen" titel="Modifier"></i>
+                            </a>
+                            <a class="" href="{{path('lists_page')}}">
+                                <i class="fas fa-trash-alt" title="Supprimer"></i>
+                            </a>
+                        </td>
+                      
+                    </tr>
+                    {% endfor %} #}
+                </tbody>
+            </table>
+        </div>
+
+
+{% endblock %}
+       

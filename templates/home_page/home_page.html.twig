@@ -38,9 +38,35 @@
                 </tr>
             </thead>
             <tbody>
-                
+                {% for list in lists %}
+                <tr>
+                    <th scope="row">
+                      {{ list.name | capitalize }}
+                    </th>
+                    <td >
+                      {{ list.dateLimited | date('d/m/Y') }}                     
+                    </td>
+                    <td class="{% if list.priority == "Urgent" %} urgent {% endif %} ">
+                      {{ list.priority | capitalize}}
+                    </td>
+                    <td>18%</td>
+                    <td>
+                        <a class="" href="{{path('list_details_page', { 'id': list.id})}}">
+                            <i class="fas fa-eye" title="Voir"></i>
+                        </a>
+                        <a class="" href="">
+                            <i class="fas fa-pen" titel="Modifier"></i>
+                        </a>
+                        <a class="" href="">
+                            <i class="fas fa-trash-alt" title="Supprimer"></i>
+                        </a>
+                    </td>
+                   
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
+
     </div>
 
 
