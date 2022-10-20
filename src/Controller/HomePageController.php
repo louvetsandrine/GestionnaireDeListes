@@ -17,8 +17,7 @@ class HomePageController extends AbstractController
 
         return $this->render('home_page/home_page.html.twig', [
             'controller_name' => 'HomePageController',
-            'title' => 'Gestionnaire de listes',
-            'lists' => $lists
+           'lists' => $lists
         ]);
     }
 }

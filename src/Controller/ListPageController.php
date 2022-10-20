@@ -21,19 +21,22 @@ class ListPageController extends AbstractController
 
         $date = new DateTime('now');
 
-        // $list->setName('nouveau');
-        // $list->setPriority('forte');
-        // $list->setAuthor('machin');
-        // $list->setDateLimited($date);
-        
-        $list->setNowDate($date);
 
         $form = $this->createForm(ListCreateType::class);
-        
         $form->handleRequest($request);
+
+
 
         if($form->isSubmitted() ){
             // dd($form->getData());
+
+            $list->setName('new');
+            $list->setPriority('Urgent');
+            $list->setAuthor('');
+            $list->setDateLimited($date);
+            
+            $list->setNowDate($date);
+    
           
             $doctrine->persist($list);
             $doctrine->flush();

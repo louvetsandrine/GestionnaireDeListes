@@ -25,7 +25,7 @@ class ListCreateType extends AbstractType
                 ],
                 'choices' => [
                     'Oui'   => 'Urgent',
-                    'Non'   => 'Pas urgent',
+                    'Non'   => '/',
                 ],
               'expanded' => true])
             ->add('dateLimited', DateType::class, [  
