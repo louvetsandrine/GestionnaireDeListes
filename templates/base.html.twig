@@ -37,6 +37,12 @@
         <main class="mx-5 my-3">
             {% block body %} {% endblock %}
             {% block javascript %} {% endblock %}
+
+            <div id="arrow_scrollTop"> 
+                <a href="#top">
+                    <i class="bi bi-arrow-up-square-fill"></i>
+                </a> 
+            </div>
         </main>
         
         {% include '_footer.html.twig' %}
@@ -47,9 +53,7 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         
-        <script>
 
-  
+        <script src="{{ asset('script.js') }}"></script>
 
-</script>
 </html>

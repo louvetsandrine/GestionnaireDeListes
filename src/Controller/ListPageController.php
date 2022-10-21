@@ -18,26 +18,18 @@ class ListPageController extends AbstractController
     public function index(EntityManagerInterface $doctrine, Request $request): Response
     {
         $list = new Lists();
-
         $date = new DateTime('now');
-
 
         $form = $this->createForm(ListCreateType::class);
         $form->handleRequest($request);
 
-
-
         if($form->isSubmitted() ){
             // dd($form->getData());
-
-            $list->setName('new');
-            $list->setPriority('Urgent');
-            $list->setAuthor('');
+            $list->setAuthor("Renée Truc");
+            $list->setName("course");
+            $list->setPriority('oui');
             $list->setDateLimited($date);
-            
             $list->setNowDate($date);
-    
-          
             $doctrine->persist($list);
             $doctrine->flush();
             return $this->redirectToRoute('home_page');

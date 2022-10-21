@@ -15,15 +15,13 @@ body {
 .block_header_homepage {
     background: radial-gradient(circle, rgba(226,167,200,0.9345939059217437) 0%, rgba(252,70,107,1) 100%);
     background-size: cover;
-    /* padding-top: 3vw; */
     height: 30vw;
 }
 
 .block_header {
     background: radial-gradient(circle, rgba(226,167,200,0.9345939059217437) 0%, rgba(252,70,107,1) 100%);
     background-size: cover;
-    /* padding-top: 3vw; */
-    height: 4vw;
+    height: 7vw;
 }
 
 .titel {
@@ -80,7 +78,7 @@ body {
 #menu.scrolled {
     background-color: black!important;
     transition: background-color 100ms linear;
-    height: 100px;
+    height: 7vw;
 }
 
 .button_menu {
@@ -92,39 +90,21 @@ body {
 
 a.link_menu, a.link_menu:visited {
     color:#fff;
-    font-size: 16px;
+    font-size: 20px;
     margin-left: 2vw;
     text-shadow: 2px 2px 8px #000;
+    padding-top: 2vw;
 }
 
 a.link_menu:hover {
     font-weight: 800;
     color: #fff;
+    font-size: 22px;
 }
 
 .image {
     width: 17vw;
     border-radius: 50%;
-}
-
-tr {
-    text-align: center;
-    vertical-align: middle;
-}
-
-td, th {
-    font-size: 1.25vw;
-    height: 5vw;
-}
-
-i {
-    color: rgba(252,70,107,1);
-    font-size: 1.5vw;
-    padding-right: 1.5vw;
-}
-
-.button:hover i {
-    color: white;
 }
 
 .button {
@@ -184,20 +164,26 @@ table thead tr th {
     font-size: 1.5vw;
 }
 
+tr {
+    text-align: center;
+    vertical-align: middle;
+}
+
+td, th {
+    font-size: 1.25vw;
+    height: 5vw;
+}
+
+i {
+    color: rgba(252,70,107,1);
+    font-size: 1.5vw;
+    padding-right: 1.5vw;
+}
+
 .urgent {
     color: red;
+    font-weight: 800;
 }
-
-.badge {
-    top: 1.5vw; 
-    
-    font-size: 0.65vw; 
-    
-    
-}
-
-
-
 
 
 /* Form */
@@ -236,6 +222,12 @@ label {
 }
 
 
+/* Details */
+span {
+    font-weight: 800;
+}
+
+
 
 /* Footer */
 .footer {
@@ -244,3 +236,18 @@ label {
     color: white;
 }
 
+/* Arrow */
+#arrow_scrollTop { 
+    position: fixed; 
+    width: 3vw; 
+    height:3vw; 
+    bottom: 5vw; 
+    right: 5vw; 
+} 
+
+#arrow_scrollTop .bi-arrow-up-square-fill { 
+    font-size: 3vw; 
+    color: gray;
+    margin-left: 2vw;
+
+}
