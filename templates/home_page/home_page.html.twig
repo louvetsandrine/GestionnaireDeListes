@@ -46,11 +46,13 @@
                     </th>
                     <td >
                       {{ list.dateLimited | date('d/m/Y') }}  
-                      {# {% set date1 = list.dateLimited | date('d/m/Y') %} 
-                      {% set today = "now" | date('d/m/Y') %} #}
+                      {# {% set date1 = list.dateLimited | date('d/m/Y') %} #}
+                      {% set today = "now" | date('d/m/Y') %}
                       {% set leftDays = time_diff(list.dateLimited) %}
-                      {% if leftDays >0 %}
+                      {% if date('NOW') < date(list.dateLimited) %}
                       <br> <span class="leftDays">{{ leftDays | capitalize }} </span>
+                      {% else %} 
+                      <br> <span class="urgent"> DELAIS DEPASSE : C'était {{ leftDays }}</span>
                        {% endif %}            
                     </td>
                     <td class="{% if list.priority == "Urgent" %} urgent {% endif %} ">
