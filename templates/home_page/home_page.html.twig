@@ -45,7 +45,13 @@
                       {{ list.name | capitalize }}
                     </th>
                     <td >
-                      {{ list.dateLimited | date('d/m/Y') }}                     
+                      {{ list.dateLimited | date('d/m/Y') }}  
+                      {# {% set date1 = list.dateLimited | date('d/m/Y') %} 
+                      {% set today = "now" | date('d/m/Y') %} #}
+                      {% set leftDays = time_diff(list.dateLimited) %}
+                      {% if leftDays >0 %}
+                      <br> <span class="leftDays">{{ leftDays | capitalize }} </span>
+                       {% endif %}            
                     </td>
                     <td class="{% if list.priority == "Urgent" %} urgent {% endif %} ">
                       {{ list.priority | capitalize}}

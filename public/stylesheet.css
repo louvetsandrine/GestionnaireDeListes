@@ -185,6 +185,10 @@ i {
     font-weight: 800;
 }
 
+.leftDays {
+    font-size: 1.1vw;
+    font-style: italic;
+}
 
 /* Form */
 
@@ -226,6 +230,7 @@ label {
 span {
     font-weight: 800;
 }
+
 
 
 

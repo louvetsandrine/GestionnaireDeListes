@@ -26,9 +26,6 @@ class Lists
     #[ORM\Column(length: 255)]
     private ?string $priority = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $nowDate = null;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -82,15 +79,4 @@ class Lists
         return $this;
     }
 
-    public function getNowDate(): ?\DateTimeInterface
-    {
-        return $this->nowDate;
-    }
-
-    public function setNowDate(\DateTimeInterface $nowDate): self
-    {
-        $this->nowDate = $nowDate;
-
-        return $this;
-    }
 }

@@ -34,42 +34,59 @@
                 }) }}
             </div>
         </div>
-    
-    <div class="row mt-5 mb-5 justify-content-center align-items-center">
-        <div class="col-md-2">
-          {{ form_label(form.dateLimited, "Echéance:",{ 
+
+                <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.author,"Auteur:",{ 
                 'label_attr': {'class': 'text_label'}
             
                 }) }}
-        </div>
-        <div class="col-md-5">
-          {{ form_widget(form.dateLimited, {
-              "required": true,
-              "attr": {
-                "class": "form-control",
-                "placeholder": "jj/mm/aaaa"
-              }
-          }) }}
-        </div>
-    </div>
-    
-    <div class="row mt-5 mb-5 justify-content-center align-items-center">
-        <div class="col-md-2">
-          {{ form_label(form.priority,"Priorité:",{ 
-                'label_attr': {'class': 'text_label'}
-            
-                }) }}
-        </div>
-        <div class="col-md-5">
-            <div class="form-check ">
-              {{ form_widget(form.priority, {
-                  "attr": {
-                    "class": "radio",
-                  }  
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.author, {
+                "required": true, 
+                "attr": {
+                    "class": "form-control",
+                    "placeholder": "Nom Prénom",
+                }
                 }) }}
             </div>
         </div>
-    </div>
+    
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.dateLimited, "Echéance:",{ 
+                    'label_attr': {'class': 'text_label'}
+                    }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.dateLimited, {
+                "required": true,
+                "attr": {
+                    "class": "form-control",
+                    "placeholder": "jj/mm/aaaa"
+                }
+            }) }}
+            </div> 
+        </div>
+        
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.priority,"Priorité:",{ 
+                    'label_attr': {'class': 'text_label'}
+                
+                    }) }}
+            </div>
+            <div class="col-md-5">
+                <div class="form-check ">
+                {{ form_widget(form.priority, {
+                    "attr": {
+                        "class": "radio",
+                    }  
+                    }) }}
+                </div>
+            </div>
+        </div>
 
     
 

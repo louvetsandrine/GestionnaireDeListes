@@ -9,8 +9,6 @@ use App\Entity\Lists;
 use App\Form\ListCreateType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use DateTime;
-
 
 class ListPageController extends AbstractController
 {
@@ -18,18 +16,16 @@ class ListPageController extends AbstractController
     public function index(EntityManagerInterface $doctrine, Request $request): Response
     {
         $list = new Lists();
-        $date = new DateTime('now');
 
-        $form = $this->createForm(ListCreateType::class);
+        $form = $this->createForm(ListCreateType::class, $list);
         $form->handleRequest($request);
 
         if($form->isSubmitted() ){
             // dd($form->getData());
-            $list->setAuthor("Renée Truc");
-            $list->setName("course");
-            $list->setPriority('oui');
-            $list->setDateLimited($date);
-            $list->setNowDate($date);
+            // $list->setAuthor("Renée Truc");
+            // $list->setName("course");
+            // $list->setPriority('oui');
+            // $list->setDateLimited($date);
             $doctrine->persist($list);
             $doctrine->flush();
             return $this->redirectToRoute('home_page');
@@ -39,7 +35,7 @@ class ListPageController extends AbstractController
         return $this->render('list_page/list_form_page.html.twig', [
             'controller_name' => 'ListPageController',
             'title' => 'Créer une liste',
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 }
