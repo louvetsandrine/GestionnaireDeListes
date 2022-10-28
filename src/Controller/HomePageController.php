@@ -8,7 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Lists;
 use App\Repository\ListsRepository;
 use DateTime;
-
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class HomePageController extends AbstractController
 {
@@ -23,5 +25,16 @@ class HomePageController extends AbstractController
            'controller_name' => 'HomePageController',
            'lists' => $lists,
         ]);
+    }
+
+    /**
+     * @Route("/{id}/delete", name="list_delete_page")
+     */
+    public function deleteList(Lists $list, EntityManagerInterface $entityManager): Response
+    {
+        $entityManager->remove($list);
+        $entityManager->flush();
+
+        return new Response('Liste supprimé');
     }
 }
