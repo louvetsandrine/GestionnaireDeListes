@@ -18,13 +18,12 @@
             <p>
                 <button class="button" role="button">
                     <a class="" href="{{path('list_page')}}">
-                      <i class="fas fa-plus"></i>
                         Créer une liste
                     </a>
                 </button>
                 <button class="button" role="button">
                     <a class="" href="{{path('task_page')}}">
-                      <i class="fas fa-plus"></i>
+                      {# <i class="fas fa-plus"></i> #}
                         Créer une tâche
                     </a>
                 </button>
@@ -76,7 +75,7 @@
                             <i class="fas fa-pen" titel="Modifier"></i>
                         </a>
                         <a class="" href="{{path('list_delete_page', {'id': list.id})}}"
-                        onclick="return confirm('Attention, la liste va être définitivement supprimée')">
+                        onclick="return confirm('Attention! Êtes-vous sûr de vouloir définitivement supprimer la liste?')">
                             <i class="fas fa-trash-alt" title="Supprimer"></i>
                         </a>
                     </td>

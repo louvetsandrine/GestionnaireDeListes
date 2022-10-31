@@ -21,6 +21,13 @@
                 </p>
                 <p class="">
                   Echéance: <span> {{listDetails.dateLimited | date('d/m/Y')}} </span>
+                  {% set today = "now" | date('d/m/Y') %}
+                  {% set leftDays = time_diff(listDetails.dateLimited) %}
+                  {% if date('NOW') < date(listDetails.dateLimited) %}
+                  <br> <span class="leftDays">{{ leftDays | capitalize }} </span>
+                  {% else %} 
+                  <br> <span class="urgent"> DELAIS DEPASSE : C'était {{ leftDays }}</span>
+                  {% endif %}            
                 </p>
                 <p class="">
                   Progression: <span> 18% </span>

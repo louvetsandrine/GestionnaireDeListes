@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ListsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +27,14 @@ class Lists
 
     #[ORM\Column(length: 255)]
     private ?string $priority = null;
+
+    #[ORM\ManyToMany(targetEntity: Tasks::class, mappedBy: 'list')]
+    private Collection $tasks;
+
+    public function __construct()
+    {
+        $this->tasks = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +85,33 @@ class Lists
     public function setPriority(string $priority): self
     {
         $this->priority = $priority;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tasks>
+     */
+    public function getTasks(): Collection
+    {
+        return $this->tasks;
+    }
+
+    public function addTask(Tasks $task): self
+    {
+        if (!$this->tasks->contains($task)) {
+            $this->tasks->add($task);
+            $task->addList($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTask(Tasks $task): self
+    {
+        if ($this->tasks->removeElement($task)) {
+            $task->removeList($this);
+        }
 
         return $this;
     }
