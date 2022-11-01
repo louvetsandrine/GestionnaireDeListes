@@ -23,15 +23,20 @@ class TaskCreateType extends AbstractType
                 'widget' => 'single_text',
                 'html5' => false,
                 'label' => 'Echéance: ',
+                'input' => 'string',
                 'format' => 'dd/MM/yyyy'
             ])
-            // ->add('list', EntityType::class, [
-            //     'class' => Lists::class,
-            //     'choice_label'
-            // ])
-            ->add('list', CollectionType::class, [
-                'entry_type' => ListsType::class,
+            ->add('list', EntityType::class, [
+                'class' => Lists::class,
+                'choice_label'=> 'name',
+                'mapped' => false
             ])
+            // ->add('list', CollectionType::class, [
+            //     'entry_type' => ListCreateType::class,
+            //     'allow_add' => true,
+            //     'allow_delete' => true,
+            //     'prototype' => true,
+            // ])
         ;
     }
 
