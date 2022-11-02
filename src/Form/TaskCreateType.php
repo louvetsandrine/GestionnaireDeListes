@@ -28,7 +28,7 @@ class TaskCreateType extends AbstractType
             ])
             ->add('list', EntityType::class, [
                 'class' => Lists::class,
-                'choice_label'=> 'name',
+                'choice_label'=> 'id',
                 'mapped' => false
             ])
             // ->add('list', CollectionType::class, [

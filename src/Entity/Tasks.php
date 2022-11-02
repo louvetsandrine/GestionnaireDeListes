@@ -21,12 +21,12 @@ class Tasks
     #[ORM\Column(length: 255)]
     private ?string $dateLimited = null;
 
-    #[ORM\ManyToMany(targetEntity: Lists::class, inversedBy: 'tasks')]
-    private Collection $list;
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Lists $list = null;
 
     public function __construct()
     {
-        $this->list = new ArrayCollection();
+        return $this->list ;
     }
 
     public function getId(): ?int
@@ -58,32 +58,21 @@ class Tasks
         return $this;
     }
 
-    /**
-     * @return Collection<int, Lists>
-     */
-    public function getList(): Collection
-    {
-        return $this->list;
-    }
-
-    public function addList(Lists $list): self
-    {
-        if (!$this->list->contains($list)) {
-            $this->list->add($list);
-        }
-
-        return $this;
-    }
-
-    public function removeList(Lists $list): self
-    {
-        $this->list->removeElement($list);
-
-        return $this;
-    }
-
     public function __toString()
     {
         return $this->getName();
     }
+
+    public function getList(): ?Lists
+    {
+        return $this->list;
+    }
+
+    public function setList(?Lists $list): self
+    {
+        $this->list = $list;
+
+        return $this;
+    }
+
 }
