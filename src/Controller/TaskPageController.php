@@ -16,9 +16,9 @@ class TaskPageController extends AbstractController
     #[Route('/task_page', name: 'task_page')]
     public function index(EntityManagerInterface $doctrine, Request $request): Response
     {
-        $list = new Tasks();
+        $task = new Tasks();
 
-        $form = $this->createForm(TaskCreateType::class, $list);
+        $form = $this->createForm(TaskCreateType::class, $task);
         $form->handleRequest($request);
 
         if($form->isSubmitted() ){
@@ -27,9 +27,13 @@ class TaskPageController extends AbstractController
             // $list->setName("course");
             // $list->setPriority('oui');
             // $list->setDateLimited($date);
-            $doctrine->persist($list);
+            $doctrine->persist($task);
             $doctrine->flush();
+            $this->addFlash('success', 'C\'est réussi');
             return $this->redirectToRoute('home_page');
+        }
+        else {
+            $this->addFlash('error', 'Raté');
         }
         
         
