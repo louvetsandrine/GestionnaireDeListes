@@ -76,8 +76,8 @@
                         <a class="" href="{{path('list_details_page', {'id': list.id})}}">
                             <i class="fas fa-eye" title="Voir"></i>
                         </a>
-                        <a class="" href="">
-                            <i class="fas fa-pen" titel="Modifier"></i>
+                        <a class="" href="{{path('list_modify_page', {'id': list.id})}}">
+                            <i class="fas fa-pen" title="Modifier"></i>
                         </a>
                         <a class="" href="{{path('list_delete_page', {'id': list.id})}}"
                         onclick="return confirm('Attention! Êtes-vous sûr de vouloir définitivement supprimer la liste?')">

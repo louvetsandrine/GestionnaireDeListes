@@ -35,24 +35,19 @@
             {% block header %} {% endblock %}
         </header>
 
-
-{% block alerts %}
-  {% for type, messages in app.flashes %}
-    {% for message in messages %}
-
-        {%if type == 'error'%} {% set type = 'danger' %} {%endif%}
-        {%if type == 'success'%} {% set type = 'success' %} {%endif%}
-        {# Bootstrap alert, see http://getbootstrap.com/components/#alerts #}
-
-        <div class="alert alert-{{ type }} alert-dismissible fade show" role="alert">
-  {{ message}}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-    {% endfor %}
-  {% endfor %}
-{% endblock %} {# alerts #}
-
-
+        {% block alerts %} {# alerts #}
+            {% for type, messages in app.flashes %}
+                {% for message in messages %}
+                    {%if type == 'error'%} {% set type = 'danger' %} {%endif%}
+                    {%if type == 'success'%} {% set type = 'success' %} {%endif%}
+                    {# Bootstrap alert #}
+                    <div class="alert alert-{{ type }} alert-dismissible fade show" role="alert">
+                        {{ message}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endblock %} 
     
         <main class="mx-5 my-3">
             {% block body %} {% endblock %}

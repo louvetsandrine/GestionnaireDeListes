@@ -29,13 +29,9 @@ class TaskPageController extends AbstractController
             // $list->setDateLimited($date);
             $doctrine->persist($task);
             $doctrine->flush();
-            $this->addFlash('success', 'C\'est réussi');
+            $this->addFlash('success', 'La tâche a bien été enregistrée');
             return $this->redirectToRoute('home_page');
         }
-        else {
-            $this->addFlash('error', 'Raté');
-        }
-        
         
         return $this->render('task_page/task_form_page.html.twig', [
             'controller_name' => 'TaskPageController',

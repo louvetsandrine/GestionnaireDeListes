@@ -28,6 +28,7 @@ class ListPageController extends AbstractController
             // $list->setDateLimited($date);
             $doctrine->persist($list);
             $doctrine->flush();
+            $this->addFlash('success', 'La tâche a bien été enregistrée');
             return $this->redirectToRoute('home_page');
         }
         
