@@ -5,78 +5,99 @@
 {% endblock %}
 
 {% block body %}
+ 
+    <div class="row justify-content-center align-items-center block my-5">
+        <div class=" col-12 justify-content-center align-items-center">
+            <p class="h2 pt-3 text-center">
+              Modifier la liste: {{listDetails.name | capitalize}}
+            </p>
+        </div>
+    </div>
+
+{{ form_start(form) }}
+    <form class="justify-content-center align-items-center">
+
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.name,"Intitulé de la liste:",{ 
+                'label_attr': {'class': 'text_label'}
+            
+                }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.name, {
+                "required": true, 
+                "attr": {
+                    "class": "form-control",
+                }
+                }) }}
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.author,"Auteur:",{ 
+                'label_attr': {'class': 'text_label'}
+            
+                }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.author, {
+                "required": true, 
+                "attr": {
+                    "class": "form-control",
+                }
+                }) }}
+            </div>
+        </div>
+    
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.dateLimited, "Echéance:",{ 
+                    'label_attr': {'class': 'text_label'}
+                    }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.dateLimited, {
+                "required": true,
+                "attr": {
+                    "class": "form-control",
+                }
+            }) }}
+            </div> 
+        </div>
         
-        <div class="row justify-content-center align-items-center block my-5">
-            <div class=" col-12 justify-content-center align-items-center">
-                <p class="h2 pt-3 text-center">
-                  Liste: {{listDetails.name | capitalize}}
-                </p>
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.priority,"Priorité:",{ 
+                    'label_attr': {'class': 'text_label'}
+                
+                    }) }}
+            </div>
+            <div class="col-md-5">
+                <div class="form-check ">
+                {{ form_widget(form.priority, {
+                    "attr": {
+                        "class": "radio",
+                    }  
+                    }) }}
+                </div>
             </div>
         </div>
 
-        <div class="row justify-content-center align-items-center block my-5">
-            <div class=" col-12 justify-content-center align-items-center">
-                <p class="">
-                  Auteur: <span>{{listDetails.author | capitalize}} </span>
-                </p>
-                <p class="">
-                  Echéance: <span> {{listDetails.dateLimited | date('d/m/Y')}} </span>
-                  {% set today = "now" | date('d/m/Y') %}
-                  {% set leftDays = time_diff(listDetails.dateLimited) %}
-                  {% if date('NOW') < date(listDetails.dateLimited) %}
-                  <br> <span class="leftDays">{{ leftDays | capitalize }} </span>
-                  {% else %} 
-                  <br> <span class="urgent"> DELAIS DEPASSE : C'était {{ leftDays }}</span>
-                  {% endif %}            
-                </p>
-                <p class="">
-                  Progression: <span> 18% </span>
-                </p>
+    
+
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-sm-2 offset-md-1">
+                <button type="submit" class="btn button">Enregistrer</button>
             </div>
         </div>
 
+    </form>
 
-        <div class="row justify-content-center align-items-center block my-5">
-            <table class="table table-hover">
-                <thead class="">
-                    <tr class="" >
-                        <th scope="col">Taches</th>
-                        <th scope="col">Echéance</th>
-                        <th scope="col">Personnes</th>
-                        <th scope="col">Etat</th>
-                        <th scope="col">Observations</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {# {% for list in lists %}
-                    <tr>
-                        <th scope="row">
-                          {{ list.name | capitalize }}
-                        </th>
-                        <td >
-                          {{ list.limiteDate | date('d/m/Y') }}                     
-                        </td>
-                        <td class="{% if list.priority == "Urgent" %} urgent {% endif %} ">
-                          {{ list.limiteDate | ago(locale='fr') | capitalize}}
-                        </td>
-                        <td>18%</td>
-                        <td>
-                            <a class="" href="{{path('list_details_page')}}">
-                                <i class="fas fa-eye" title="Voir"></i>
-                            </a>
-                            <a class="" href="{{path('tasks_page')}}">
-                                <i class="fas fa-pen" titel="Modifier"></i>
-                            </a>
-                            <a class="" href="{{path('lists_page')}}">
-                                <i class="fas fa-trash-alt" title="Supprimer"></i>
-                            </a>
-                        </td>
-                      
-                    </tr>
-                    {% endfor %} #}
-                </tbody>
-            </table>
-        </div>
+{{ form_end(form) }}
+
+
 
 
 {% endblock %}

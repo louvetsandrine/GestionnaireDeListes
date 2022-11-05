@@ -34,6 +34,7 @@ class HomePageController extends AbstractController
     {
         $entityManager->remove($list);
         $entityManager->flush();
+        $this->addFlash('success', 'La liste a bien été supprimée!');
 
         return $this->redirectToRoute('home_page');
     }

@@ -6,27 +6,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Lists;
+use App\Repository\ListsRepository;
 use App\Entity\Tasks;
 use App\Form\TaskCreateType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-class TaskPageController extends AbstractController
+class TaskCreatePageController extends AbstractController
 {
     #[Route('/task_page', name: 'task_page')]
-    public function index(EntityManagerInterface $doctrine, Request $request): Response
+    public function index(EntityManagerInterface $doctrine, Request $request, ListsRepository $listsRepository,): Response
     {
-        $task = new Tasks();
 
+        $task = new Tasks();
+        // $listDetails = $listsRepository->findAll();
         $form = $this->createForm(TaskCreateType::class, $task);
         $form->handleRequest($request);
 
         if($form->isSubmitted() ){
-            // dd($form->getData());
-            // $list->setAuthor("Renée Truc");
-            // $list->setName("course");
-            // $list->setPriority('oui');
-            // $list->setDateLimited($date);
+            dd($form->getData());
             $doctrine->persist($task);
             $doctrine->flush();
             $this->addFlash('success', 'La tâche a bien été enregistrée');
@@ -34,7 +32,7 @@ class TaskPageController extends AbstractController
         }
         
         return $this->render('task_page/task_form_page.html.twig', [
-            'controller_name' => 'TaskPageController',
+            'controller_name' => 'TaskCreatePageController',
             'title' => 'Créer une tâche',
             'form' => $form->createView(),
         ]);

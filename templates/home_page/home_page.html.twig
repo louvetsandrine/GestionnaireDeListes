@@ -18,21 +18,22 @@
             </p>
         </div>
     
-    <div class="row justify-content-center align-items-center block my-5">
-        <div class=" col-12 justify-content-center align-items-center">
-            <p>
+    <div class="row  block my-5">
+        <div class="col-3">
                 <button class="button" role="button">
                     <a class="" href="{{path('list_page')}}">
                         Créer une liste
                     </a>
                 </button>
+        </div>
+        <div class="col-3">
                 <button class="button" role="button">
                     <a class="" href="{{path('task_page')}}">
                       {# <i class="fas fa-plus"></i> #}
                         Créer une tâche
                     </a>
                 </button>
-            </p>
+
         </div>
     </div>
 
@@ -70,7 +71,7 @@
                     </td>
                     <td>18%</td>
                     <td>
-                      {{ list.author | capitalize}}
+                      {{ list.author | title}}
                     </td>
                     <td>
                         <a class="" href="{{path('list_details_page', {'id': list.id})}}">

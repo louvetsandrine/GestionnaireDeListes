@@ -31,12 +31,6 @@ class TaskCreateType extends AbstractType
                 'choice_label'=> 'id',
                 'mapped' => false
             ])
-            // ->add('list', CollectionType::class, [
-            //     'entry_type' => ListCreateType::class,
-            //     'allow_add' => true,
-            //     'allow_delete' => true,
-            //     'prototype' => true,
-            // ])
         ;
     }
 
