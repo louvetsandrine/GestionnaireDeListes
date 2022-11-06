@@ -21,7 +21,7 @@ class Tasks
     #[ORM\Column(length: 255)]
     private ?string $dateLimited = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'tasks')]
     private ?Lists $list = null;
 
     public function __construct()

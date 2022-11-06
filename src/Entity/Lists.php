@@ -28,6 +28,9 @@ class Lists
     #[ORM\Column(length: 255)]
     private ?string $priority = null;
 
+    #[ORM\OneToMany(mappedBy: 'list', targetEntity: Tasks::class)]
+    private Collection $tasks;
+
 
     public function __construct()
     {
@@ -90,6 +93,36 @@ class Lists
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Collection<int, Tasks>
+     */
+    public function getTasks(): Collection
+    {
+        return $this->tasks;
+    }
+
+    public function addTask(Tasks $task): self
+    {
+        if (!$this->tasks->contains($task)) {
+            $this->tasks->add($task);
+            $task->setList($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTask(Tasks $task): self
+    {
+        if ($this->tasks->removeElement($task)) {
+            // set the owning side to null (unless already changed)
+            if ($task->getList() === $this) {
+                $task->setList(null);
+            }
+        }
+
+        return $this;
     }
 
 }

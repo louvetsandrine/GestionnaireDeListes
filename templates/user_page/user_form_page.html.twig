@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include '_navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+ 
+    <div class="row justify-content-center align-items-center block my-5">
+        <div class=" col-12 justify-content-center align-items-center">
+            <p class="h2 pt-3 text-center">
+              Création d'un utilisateur
+            </p>
+        </div>
+    </div>
+
+
+{{ form_start(form) }}
+    <form class="justify-content-center align-items-center">
+
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.name,"Nom:",{ 
+                'label_attr': {'class': 'text_label'}
+            
+                }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.name, {
+                "required": true, 
+                "attr": {
+                    "class": "form-control",
+                    "placeholder": "Nom",
+                }
+                }) }}
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.lastname,"Prenom:",{ 
+                'label_attr': {'class': 'text_label'}
+            
+                }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.lastname, {
+                "required": true, 
+                "attr": {
+                    "class": "form-control",
+                    "placeholder": "Prénom",
+                }
+                }) }}
+            </div>
+        </div>
+    
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.status, "Statut:",{ 
+                    'label_attr': {'class': 'text_label'}
+                    }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.status, {
+                "required": true,
+                "attr": {
+                    "class": "form-control",
+                    "placeholder": "statut"
+                }
+            }) }}
+            </div> 
+        </div>
+        
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-sm-2 offset-md-1">
+                <button type="submit" class="btn button">Enregistrer</button>
+            </div>
+        </div>
+
+    </form>
+
+{{ form_end(form) }}
+
+
+
+
+{% endblock %}
+       

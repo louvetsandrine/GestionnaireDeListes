@@ -10,6 +10,9 @@ $(function () {
 
       });
     
+      // $(document).ready(function () {
+      //   $('.dropdown-toggle').dropdown();
+      //   });
 
     // $nav.click(function() {
     //   $nav.toggleClass("background");
