@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class TaskCreatePageController extends AbstractController
 {
-    #[Route('/task_page', name: 'task_page')]
+    #[Route('/task_page', name: 'task_create_page')]
     public function index(EntityManagerInterface $doctrine, Request $request, ListsRepository $listsRepository,): Response
     {
 

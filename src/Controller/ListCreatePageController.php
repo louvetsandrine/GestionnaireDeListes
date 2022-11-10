@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ListCreatePageController extends AbstractController
 {
-    #[Route('/list_page', name: 'list_page')]
+    #[Route('/list/create', name: 'list_create_page')]
     public function index(EntityManagerInterface $doctrine, Request $request): Response
     {
         $list = new Lists();

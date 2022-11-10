@@ -71,11 +71,11 @@ body {
     text-align: left;
 }
 
-#menu.background {
-    background-color: black;
+#menu {
+    background: radial-gradient(circle, rgba(226,167,200,0.9345939059217437) 0%, rgba(252,70,107,1) 100%);
 }
 
-#menu.scrolled {
+#menu_homepage.scrolled {
     background-color: black!important;
     transition: background-color 100ms linear;
     height: 7vw;

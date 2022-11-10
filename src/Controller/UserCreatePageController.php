@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserCreatePageController extends AbstractController
 {
-    #[Route('/user_page', name: 'user_page')]
+    #[Route('/users/create', name: 'user_create_page')]
     public function index(EntityManagerInterface $doctrine, Request $request): Response
     {
         $user = new Users();

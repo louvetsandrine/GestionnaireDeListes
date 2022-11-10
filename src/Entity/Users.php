@@ -20,7 +20,7 @@ class Users
     private ?string $lastname = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $status = null;
+    private ?string $sector = null;
 
     public function getId(): ?int
     {
@@ -51,14 +51,14 @@ class Users
         return $this;
     }
 
-    public function getStatus(): ?string
+    public function getSector(): ?string
     {
-        return $this->status;
+        return $this->sector;
     }
 
-    public function setStatus(string $status): self
+    public function setSector(string $sector): self
     {
-        $this->status = $status;
+        $this->sector = $sector;
 
         return $this;
     }

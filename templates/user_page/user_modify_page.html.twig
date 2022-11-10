@@ -9,11 +9,10 @@
     <div class="row justify-content-center align-items-center block my-5">
         <div class=" col-12 justify-content-center align-items-center">
             <p class="h2 pt-3 text-center">
-              Création d'un utilisateur
+              Modifier la liste: {{userDetails.name | capitalize}}
             </p>
         </div>
     </div>
-
 
 {{ form_start(form) }}
     <form class="justify-content-center align-items-center">
@@ -30,7 +29,6 @@
                 "required": true, 
                 "attr": {
                     "class": "form-control",
-                    "placeholder": "Nom",
                 }
                 }) }}
             </div>
@@ -38,7 +36,7 @@
 
         <div class="row mt-5 mb-5 justify-content-center align-items-center">
             <div class="col-md-2">
-            {{ form_label(form.lastname,"Prenom:",{ 
+            {{ form_label(form.lastname,"Prénom:",{ 
                 'label_attr': {'class': 'text_label'}
             
                 }) }}
@@ -48,29 +46,30 @@
                 "required": true, 
                 "attr": {
                     "class": "form-control",
-                    "placeholder": "Prénom",
                 }
                 }) }}
             </div>
         </div>
     
-        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+       <div class="row mt-5 mb-5 justify-content-center align-items-center">
             <div class="col-md-2">
-            {{ form_label(form.sector, "Secteur:",{ 
-                    'label_attr': {'class': 'text_label'}
-                    }) }}
+            {{ form_label(form.sector,"Secteur:",{ 
+                'label_attr': {'class': 'text_label'}
+            
+                }) }}
             </div>
             <div class="col-md-5">
             {{ form_widget(form.sector, {
-                "required": true,
+                "required": true, 
                 "attr": {
                     "class": "form-control",
-                    "placeholder": "Secteur"
                 }
-            }) }}
-            </div> 
+                }) }}
+            </div>
         </div>
-        
+
+    
+
         <div class="row mt-5 mb-5 justify-content-center align-items-center">
             <div class="col-sm-2 offset-md-1">
                 <button type="submit" class="btn button">Enregistrer</button>

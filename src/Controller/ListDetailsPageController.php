@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ListDetailsPageController extends AbstractController
 {
     /**
-     * @Route("/listDetails/{id}", name="list_details_page")
+     * @Route("/list/details/{id}", name="list_details_page")
      */
     public function listDetailsPage(ListsRepository $listsRepository, int $id)
     {        

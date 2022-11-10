@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include '_navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}
+        
+        <div class="row justify-content-center align-items-center block my-5">
+            <div class=" col-12 justify-content-center align-items-center">
+                <p class="h2 pt-3 text-center">
+                  Liste: {{userDetails.name | capitalize}}
+                </p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center align-items-center block my-5">
+            <div class=" col-12 justify-content-center align-items-center">
+                <p class="">
+                  Auteur: <span>{{userDetails.name | capitalize}} </span>
+                </p>
+                
+            </div>
+        </div>
+
+
+        
+    
+
+{% endblock %}
+       
