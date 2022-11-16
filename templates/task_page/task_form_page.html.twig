@@ -30,10 +30,22 @@
                 "required": true, 
                 "attr": {
                     "class": "form-control",
-                    "placeholder": "Nom de la liste",
+                    "placeholder": "Intitulé de la tâche",
                 }
                 }) }}
             </div>
+        </div>
+
+        <div class="row mt-5 mb-5 justify-content-center align-items-center">
+            <div class="col-md-2">
+            {{ form_label(form.list, "Personne concernée:",{ 
+                    'label_attr': {'class': 'text_label'}
+            }) }}
+            </div>
+            <div class="col-md-5">
+            {{ form_widget(form.user,
+            )  }}
+            </div> 
         </div>
     
         <div class="row mt-5 mb-5 justify-content-center align-items-center">

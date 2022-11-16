@@ -4,6 +4,9 @@ namespace App\Form;
 
 use App\Entity\Lists;
 use App\Entity\Tasks;
+use App\Entity\Users;
+use App\Repository\ListsRepository;
+use App\Repository\UsersRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,6 +22,16 @@ class TaskCreateType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
+            ->add('user', EntityType::class, [
+                'class' => Users::class,
+                'choice_label'=> 'name',
+                'choice_value'=> 'id',
+                'placeholder' => '-- Sélectionner un collaborateur --',
+                'query_builder' => function (UsersRepository $usersRepository) {
+                    return $usersRepository->createQueryBuilder('u')->orderBy('u.name', 'ASC');
+                },
+                'mapped' => false
+            ])
             ->add('dateLimited', DateType::class, [  
                 'widget' => 'single_text',
                 'html5' => false,
@@ -28,7 +41,12 @@ class TaskCreateType extends AbstractType
             ])
             ->add('list', EntityType::class, [
                 'class' => Lists::class,
-                'choice_label'=> 'id',
+                'choice_label'=> 'name',
+                'choice_value'=> 'name',
+                'placeholder' => '-- Sélectionner une liste --',
+                'query_builder' => function (ListsRepository $listsRepository) {
+                    return $listsRepository->createQueryBuilder('l')->orderBy('l.name', 'ASC');
+                },
                 'mapped' => false
             ])
         ;

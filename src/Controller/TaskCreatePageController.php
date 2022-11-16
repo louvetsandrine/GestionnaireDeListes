@@ -24,7 +24,7 @@ class TaskCreatePageController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() ){
-            dd($form->getData());
+            // dd($form->getData());
             $doctrine->persist($task);
             $doctrine->flush();
             $this->addFlash('success', 'La tâche a bien été enregistrée');
